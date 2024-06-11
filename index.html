@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zur PWA-Seite</title>
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <button id="navigateButton">Zur PWA-Seite</button>
@@ -32,6 +33,17 @@
                 window.location.href = 'https://anette2592.softr.app'; // URL der Softr-Seite
             }
         });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }, error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
     </script>
 </body>
 </html>
