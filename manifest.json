@@ -1,0 +1,15 @@
+{
+    "name": "Installierbare PWA",
+    "short_name": "PWA",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "Eine installierbare Progressive Web App",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
